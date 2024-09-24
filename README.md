@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Documentation for Maximum Entertainment Developer API"
+nav_order: 1
+---
+
 # Documentation for Maximum Entertainment Developer API
 
 This API provides functionality to query a variety of different data on both physical and digital side of the business, including sales, preorder, and wishlist data. It's designed for use by internal and external teams, including development partners.
