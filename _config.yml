@@ -1,0 +1,7 @@
+# _config.yml
+title: Maximum Entertainment Developer API
+description: Comprehensive API documentation for our services.
+theme: jekyll-theme-minimal  # Choose a built-in Jekyll theme
+markdown: kramdown
+plugins:
+  - jekyll-feed
