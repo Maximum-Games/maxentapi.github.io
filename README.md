@@ -1,8 +1,4 @@
----
-layout: default
-title: "Documentation for Maximum Entertainment Developer API"
-nav_order: 1
----
+
 
 # Documentation for Maximum Entertainment Developer API
 
