@@ -166,3 +166,160 @@ To start using the API (assuming you've been granted a `client secret`), follow 
 - **Possible Errors:**
   - `400 Bad Request`: If `client_id` or `client_secret` is missing from the request body.
   - `401 Unauthorized`: If the provided `client_id` or `client_secret` is invalid or has expired.
+
+
+### `/external/physical/data` - access Physical Sales data
+
+- **Description:**  
+  Retrieves external physical data based on specified query parameters. This endpoint supports multiple data retrieval types, including preorders, partner dashboard data, partner inventory data, and event data.
+
+- **HTTP Method:**  
+  `GET`
+
+- **Query Parameters:**
+  - **`table`** (string, required): The type of data to retrieve. Expected values:
+    - `'partner_dashboard'`: Fetches partner dashboard data.
+    - `'partner_inventory'`: Fetches partner inventory data.
+    - `'event'`: Fetches event data.
+  - **`start_date`** (string, optional): The start date for filtering data (format: `YYYY-MM-DD`).
+  - **`end_date`** (string, optional): The end date for filtering data (format: `YYYY-MM-DD`).
+  - **`title`** (string, optional): The title to filter data.
+  - **`platform`** (string, optional): The platform to filter data (e.g., 'PS5', 'Nintendo Switch').
+  - **`account`** (string, optional): The account identifier to filter data.
+  - **`country`** (string, optional): The country to filter data.
+  - **`page`** (int, optional): controls which portion of the subsetted query to return
+  - **`limit`** (int, optional): defines the maximum number of records per page
+
+- **Headers:**
+  - **`Authorization`** (string, required): `Bearer {JWT token}` for authentication.
+
+- **Authentication:**
+  - The request must include a valid JWT token in the `Authorization` header.
+  - The user's `user_type` must be allowed access to this endpoint (validated using the `external_user_required` decorator).
+
+- **Example Request:**
+
+    ```bash
+    curl -X GET "https://exodus-api-brnklh6uya-uw.a.run.app/external/physical/data?table=partner_dashboard&start_date=2023-01-01&end_date=2023-01-31" \
+    -H "Authorization: Bearer <YOUR_TOKEN_HERE>"
+    ```
+
+    ```python
+    #uncomment this
+    #token = <insert token>
+
+    headers ={
+                'Authorization': f'Bearer {token}',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+    }
+
+ 
+    params = {
+        'table': 'event' #refer to 'Query Parameters' section above for list of options
+    }
+
+    api_url = 'https://exodus-api-brnklh6uya-uw.a.run.app/external/physical/data'
+
+    response = requests.get(api_url, headers=headers, params=params)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Print the JSON response
+        print(response.json())
+    else:
+        print(f"Failed to retrieve data: {response.status_code} - {response.text}")
+
+    # Turn the data into a dataframe and take a look
+    data = pd.DataFrame(response.json())
+    print(data)
+    ```
+
+- **Response:**
+  The response is a JSON object with the following keys:
+
+  - **`data`** (array): A list of records matching the query parameters. Each item in this array represents a data row with fields corresponding to the selected `table` 
+  - **`limit`** (int): The maximum number of records returned per page, as specified by the `limit` query parameter.
+  - **`page`** (int): The current page number of the results, reflecting the `page` query parameter.
+  - **`total_count`** (int): The total number of records that match the query criteria across all pages, not just the current page.
+  - **`total_pages`** (int): The total number of pages available based on the `total_count` and `limit` values.
+
+
+
+
+  ### **`GET /external/digital/data`**
+
+- **Description:**  
+  Retrieves external digital data based on specified query parameters. This endpoint supports multiple data retrieval types, including digital sales data, daily wishlists, and event data.
+
+- **HTTP Method:**  
+  `GET`
+
+- **Query Parameters:**
+  - **`table`** (string, required): The type of data to retrieve. Expected values:
+    - `'digital_sale'`: Fetches digital sales data.
+    - `'daily_wishlists'`: Fetches daily wishlists data.
+    - `'event'`: Fetches event data.
+    - Future expansions may support additional table types.
+  - **`start_date`** (string, optional): The start date for filtering data (format: `YYYY-MM-DD`).
+  - **`end_date`** (string, optional): The end date for filtering data (format: `YYYY-MM-DD`).
+  - **`title`** (string, optional): The title to filter data.
+  - **`platform`** (string, optional): The platform to filter data (e.g., 'PS5', 'Nintendo Switch').
+  - **`account`** (string, optional): The account identifier to filter data.
+  - **`country`** (string, optional): The country to filter data.
+  - **`page`** (int, optional): controls which portion of the subsetted query to return
+  - **`limit`** (int, optional): defines the maximum number of records per page
+
+- **Headers:**
+  - **`Authorization`** (string, required): `Bearer {JWT token}` for authentication.
+
+- **Authentication:**
+  - The request must include a valid JWT token in the `Authorization` header.
+  - The user's `user_type` must be allowed access to this endpoint (validated using the `external_user_required` decorator).
+
+- **Example Request:**
+
+    ```bash
+    curl -X GET "https://exodus-api-brnklh6uya-uw.a.run.app/external/digital/data?table=digital_sales&start_date=2023-01-01&end_date=2023-01-31" \
+    -H "Authorization: Bearer YOUR_TOKEN_HERE"
+    ```
+
+    ```python
+        #uncomment this
+        #token = <insert token>
+
+        headers ={
+                    'Authorization': f'Bearer {token}',
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+        }
+
+        params = {
+            'table': 'digital_sales' 
+        }
+
+        # This is the URL for getting data. Notice how it's appended with '/data' instead of '/token' now. 
+        api_url = 'https://exodus-api-brnklh6uya-uw.a.run.app/external/digital/data'
+
+        response = requests.get(api_url, headers=headers, params=params)
+
+        # Check if the request was successful
+        if response.status_code == 200:
+            # Print the JSON response
+            print(response.json())
+        else:
+            print(f"Failed to retrieve data: {response.status_code} - {response.text}")
+
+        # Turn the data into a dataframe and take a look
+        data = pd.DataFrame(response.json())
+        print(data)
+    ```
+
+- **Response:**
+  The response is a JSON object with the following keys:
+
+  - **`data`** (array): A list of records matching the query parameters. Each item in this array represents a data row with fields corresponding to the selected `table` 
+  - **`limit`** (int): The maximum number of records returned per page, as specified by the `limit` query parameter.
+  - **`page`** (int): The current page number of the results, reflecting the `page` query parameter.
+  - **`total_count`** (int): The total number of records that match the query criteria across all pages, not just the current page.
+  - **`total_pages`** (int): The total number of pages available based on the `total_count` and `limit` values.
