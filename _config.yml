@@ -1,7 +1,24 @@
 # _config.yml
 title: Maximum Entertainment Developer API
 description: Comprehensive API documentation for our services.
-theme: jekyll-theme-minimal  # Choose a built-in Jekyll theme
+theme: just-the-docs  # Use a theme that supports sidebar navigation
 markdown: kramdown
 plugins:
   - jekyll-feed
+
+# Configure Just the Docs navigation
+just_the_docs:
+  # Enable sidebar navigation
+  show_sidebar: true
+  search_enabled: true
+
+  # Sidebar navigation items
+  collections:
+    - label: "API Reference"
+      items:
+        - label: "Generate Access Token"
+          path: "#generate-access-token"  # Link to the section within the page
+        - label: "Access Physical Sales Data"
+          path: "#access-physical-sales-data"  # Link to the section within the page
+        - label: "Access Digital Sales Data"
+          path: "#access-digital-sales-data"  # Link to the section within the page

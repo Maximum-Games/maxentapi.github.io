@@ -4,11 +4,13 @@ This API provides functionality to query a variety of different data on both phy
 
 
 
-
 ## Table of Contents
 
 - [Quick Start Guide](#quick-start-guide)
 - [API Reference](#api-reference)
+  - [Generate Access Token](#generate-access-token)
+  - [Access Physical Sales Data](#access-physical-sales-data)
+  - [Access Digital Sales Data](#access-digital-sales-data)
 - [Authentication and Authorization](#authentication-and-authorization)
 - [Error Handling](#error-handling)
 - [Troubleshooting and FAQ](#troubleshooting-and-faq)
@@ -95,7 +97,9 @@ To start using the API (assuming you've been granted a `client secret`), follow 
 
 ## API Reference
 
-### `/token` - Generate Access Token
+### Generate Acess Token
+{:#generate-access-token}
+- `/token`
 
 - **Description:**  
   Generates a new access token for a client to access secured API endpoints. The token is required for authentication and must be included in the `Authorization` header of subsequent requests.
@@ -167,8 +171,8 @@ To start using the API (assuming you've been granted a `client secret`), follow 
   - `400 Bad Request`: If `client_id` or `client_secret` is missing from the request body.
   - `401 Unauthorized`: If the provided `client_id` or `client_secret` is invalid or has expired.
 
-
-### `/external/physical/data` - access Physical Sales data
+### Access Physical Sales Data
+- **`/external/digital/data`**
 
 - **Description:**  
   Retrieves external physical data based on specified query parameters. This endpoint supports multiple data retrieval types, including preorders, partner dashboard data, partner inventory data, and event data.
@@ -246,8 +250,8 @@ To start using the API (assuming you've been granted a `client secret`), follow 
 
 
 
-
-  ### **`GET /external/digital/data`**
+### Access Digital Sales Data
+- **`/external/digital/data`**
 
 - **Description:**  
   Retrieves external digital data based on specified query parameters. This endpoint supports multiple data retrieval types, including digital sales data, daily wishlists, and event data.
@@ -275,7 +279,6 @@ To start using the API (assuming you've been granted a `client secret`), follow 
 
 - **Authentication:**
   - The request must include a valid JWT token in the `Authorization` header.
-  - The user's `user_type` must be allowed access to this endpoint (validated using the `external_user_required` decorator).
 
 - **Example Request:**
 
