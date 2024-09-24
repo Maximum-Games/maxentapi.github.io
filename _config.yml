@@ -1,7 +1,7 @@
 # _config.yml
 title: Maximum Entertainment Developer API
 description: Comprehensive API documentation for our services.
-remote_theme: just-the-docs/just-the-docs  # Use just-the-docs as a remote theme
+remote_theme: just-the-docs/just-the-docs
 markdown: kramdown
 plugins:
   - jekyll-feed
@@ -10,13 +10,29 @@ plugins:
 just_the_docs:
   show_sidebar: true
   search_enabled: true
+  show_toc: true # Ensures the table of contents shows up
+  toc_levels: 1..3 # Adjust based on the header levels you want to display in the sidebar
 
-  collections:
-    - label: "API Reference"
-      items:
-        - label: "Generate Access Token"
-          path: "#generate-access-token"
-        - label: "Access Physical Sales Data"
-          path: "#access-physical-sales-data"
-        - label: "Access Digital Sales Data"
-          path: "#access-digital-sales-data"
+# Sidebar Navigation Configuration
+nav:
+  - title: "Documentation for Maximum Entertainment Developer API"
+    url: /
+  - title: "Quick Start Guide"
+    url: "#quick-start-guide"
+  - title: "API Reference"
+    url: "#api-reference"
+    children:
+      - title: "Generate Access Token"
+        url: "#generate-access-token"
+      - title: "Access Physical Sales Data"
+        url: "#access-physical-sales-data"
+      - title: "Access Digital Sales Data"
+        url: "#access-digital-sales-data"
+  - title: "Authentication and Authorization"
+    url: "#authentication-and-authorization"
+  - title: "Error Handling"
+    url: "#error-handling"
+  - title: "Troubleshooting and FAQ"
+    url: "#troubleshooting-and-faq"
+  - title: "Contact Information"
+    url: "#contact-information"
