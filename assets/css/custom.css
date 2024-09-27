@@ -1,32 +1,27 @@
-/* Adjust sidebar padding to prevent text cutoff */
-.sidebar {
-    padding-left: 10px; /* Adjust this value as needed */
+/* Adjust the max width of the content */
+.page__content {
+    max-width: 90%; /* Increase the percentage to make it wider */
+    margin: 0 auto; /* Center the content */
 }
 
-/* Increase the sidebar width if necessary */
-.sidebar {
-    width: 250px; /* Change this width if sidebar is too narrow */
+/* Adjust the text font size if needed */
+.page__content p {
+    font-size: 16px; /* Adjust the font size as needed */
 }
 
-/* Ensure header overflow is visible to avoid cutting off text */
-.header {
-    overflow: visible;
+/* Adjust the code block size */
+.highlight {
+    font-size: 14px; /* Increase the font size of code blocks */
+    line-height: 1.5; /* Improve readability of code blocks */
 }
 
-/* Add padding at the top of the sidebar */
-.sidebar {
-    padding-top: 200px; /* Increase this value if the sidebar is still cut off */
+/* Adjust code block width */
+.highlight pre {
+    max-width: 100%; /* Allow code blocks to take the full width of the content */
+    overflow-x: auto; /* Enable horizontal scroll if the code overflows */
 }
 
-
-/* Ensure sidebar items have enough space and padding */
-.nav-list-item {
-    padding-left: 15px; /* Adjust padding for better visibility */
-}
-
-/* Add media queries for responsive adjustments */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 200px; /* Adjust for smaller screens */
-    }
+/* Adjust table width if applicable */
+table {
+    width: 100%; /* Expand tables to full width */
 }

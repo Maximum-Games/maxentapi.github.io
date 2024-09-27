@@ -17,3 +17,11 @@ sidebar:
   enabled: false
 
 
+defaults:
+  - scope:
+      path: ""
+      type: "css"
+    values:
+      assets:
+        css:
+          - /assets/css/custom.css # Add your custom CSS path
