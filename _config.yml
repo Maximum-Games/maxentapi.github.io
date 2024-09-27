@@ -3,8 +3,12 @@ title: Maximum Entertainment Developer API
 description: Comprehensive API documentation for our services.
 remote_theme: mmistakes/minimal-mistakes
 markdown: kramdown
+# Plugins
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-include-cache # Make sure this plugin is here
 
 sidebar:
   enabled: false
