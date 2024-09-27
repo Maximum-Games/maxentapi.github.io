@@ -12,3 +12,12 @@ just_the_docs:
   search_enabled: true
   show_toc: true        # Ensures the table of contents shows up
 
+# Add this to your _config.yml
+defaults:
+  - scope:
+      path: ""
+      type: "css"
+    values:
+      assets:
+        css:
+          - /assets/css/custom.css

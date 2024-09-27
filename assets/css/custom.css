@@ -1,0 +1,26 @@
+/* Adjust sidebar padding to prevent text cutoff */
+.sidebar {
+    padding-left: 10px; /* Adjust this value as needed */
+}
+
+/* Increase the sidebar width if necessary */
+.sidebar {
+    width: 250px; /* Change this width if sidebar is too narrow */
+}
+
+/* Ensure header overflow is visible to avoid cutting off text */
+.header {
+    overflow: visible;
+}
+
+/* Ensure sidebar items have enough space and padding */
+.nav-list-item {
+    padding-left: 15px; /* Adjust padding for better visibility */
+}
+
+/* Add media queries for responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Adjust for smaller screens */
+    }
+}
