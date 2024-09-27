@@ -13,6 +13,12 @@
     overflow: visible;
 }
 
+/* Add padding at the top of the sidebar */
+.sidebar {
+    padding-top: 200px; /* Increase this value if the sidebar is still cut off */
+}
+
+
 /* Ensure sidebar items have enough space and padding */
 .nav-list-item {
     padding-left: 15px; /* Adjust padding for better visibility */

@@ -5,7 +5,6 @@
 This API provides functionality to query a variety of different data on both physical and digital side of the business, including sales, preorder, and wishlist data. It's designed for use by internal and external teams, including development partners.
 
 
-
 ## Table of Contents
 
 - [Quick Start Guide](#quick-start-guide)
@@ -325,3 +324,10 @@ To start using the API (assuming you've been granted a `client secret`), follow 
   - **`page`** (int): The current page number of the results, reflecting the `page` query parameter.
   - **`total_count`** (int): The total number of records that match the query criteria across all pages, not just the current page.
   - **`total_pages`** (int): The total number of pages available based on the `total_count` and `limit` values.
+
+
+## Troubleshooting and FAQ
+
+- [Troubleshooting and FAQ](#troubleshooting-and-faq)
+
+  ## Contact Information
