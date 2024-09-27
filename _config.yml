@@ -10,6 +10,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-include-cache # Make sure this plugin is here
 
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+
 sidebar:
   enabled: false
 
