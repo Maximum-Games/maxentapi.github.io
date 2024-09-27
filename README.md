@@ -27,11 +27,6 @@ To start using the API (assuming you've been granted a `client secret`), follow 
 
 1. **Get your authorization token by hitting the /token endpoint with a GET request:**
    ```python
-   from google.cloud import storage
-    import pandas as pd 
-    import numpy as np 
-
-
     import requests
 
     CLIENT_ID = "<your client ID here>"
@@ -211,6 +206,7 @@ To start using the API (assuming you've been granted a `client secret`), follow 
     ```
 
     ```python
+    import requests
     #uncomment this
     #token = <insert token>
 
@@ -290,6 +286,7 @@ To start using the API (assuming you've been granted a `client secret`), follow 
     ```
 
     ```python
+    import requests
         #uncomment this
         #token = <insert token>
 
