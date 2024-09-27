@@ -19,26 +19,26 @@ nav:
     url: /
 
   - title: "Quick Start Guide"
-    url: "/#quick-start-guide"
+    url: "#quick-start-guide"
 
   - title: "API Reference"
-    url: "/#api-reference"
+    url: "#api-reference"
     children:
       - title: "Generate Access Token"
-        url: "/###generate-access-token"
+        url: "#generate-access-token"
       - title: "Access Physical Sales Data"
-        url: "/#access-physical-sales-data"
+        url: "#access-physical-sales-data"
       - title: "Access Digital Sales Data"
-        url: "/#access-digital-sales-data"
+        url: "#access-digital-sales-data"
 
   - title: "Authentication and Authorization"
-    url: "/#authentication-and-authorization"
+    url: "#authentication-and-authorization"
 
   - title: "Error Handling"
-    url: "/#error-handling"
+    url: "#error-handling"
 
   - title: "Troubleshooting and FAQ"
-    url: "/#troubleshooting-and-faq"
+    url: "#troubleshooting-and-faq"
 
   - title: "Contact Information"
-    url: "/#contact-information"
+    url: "#contact-information"
