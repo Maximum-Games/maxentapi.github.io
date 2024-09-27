@@ -6,10 +6,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
 
-minimal_mistakes_skin: default
 sidebar:
   enabled: false
 
-# Basic configuration options for Tactile:
-permalink: pretty
 
