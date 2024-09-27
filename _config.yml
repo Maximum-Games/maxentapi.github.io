@@ -12,6 +12,4 @@ sidebar:
 
 # Basic configuration options for Tactile:
 permalink: pretty
-# Theme configuration options
-minimal_mistakes_skin: "default" # Choose a skin (theme variation) if needed
 
