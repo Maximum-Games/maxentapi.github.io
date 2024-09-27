@@ -1,23 +1,16 @@
 # _config.yml
 title: Maximum Entertainment Developer API
 description: Comprehensive API documentation for our services.
-remote_theme: just-the-docs/just-the-docs
+remote_theme: pages-themes/tactile@v0.2.0
 markdown: kramdown
 plugins:
   - jekyll-feed
 
-# Configure Just the Docs settings
-just_the_docs:
-  show_sidebar: false
-  search_enabled: false
-  show_toc: true        # Ensures the table of contents shows up
+# Optional: Tactile theme settings
+# Tactile is a clean theme, so it does not have a sidebar by default.
+# You can adjust the colors and basic styling using custom CSS if needed.
 
-# Add this to your _config.yml
-defaults:
-  - scope:
-      path: ""
-      type: "css"
-    values:
-      assets:
-        css:
-          - /assets/css/custom.css
+# Basic configuration options for Tactile:
+permalink: pretty
+theme: tactile
+
