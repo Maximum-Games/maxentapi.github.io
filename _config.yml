@@ -9,7 +9,7 @@ plugins:
 # Configure Just the Docs settings
 just_the_docs:
   show_sidebar: false
-  search_enabled: true
+  search_enabled: false
   show_toc: true        # Ensures the table of contents shows up
 
 # Add this to your _config.yml

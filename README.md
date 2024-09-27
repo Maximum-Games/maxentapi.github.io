@@ -328,6 +328,5 @@ To start using the API (assuming you've been granted a `client secret`), follow 
 
 ## Troubleshooting and FAQ
 
-- [Troubleshooting and FAQ](#troubleshooting-and-faq)
 
-  ## Contact Information
+## Contact Information
