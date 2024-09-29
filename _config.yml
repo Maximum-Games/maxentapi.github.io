@@ -1,27 +1,38 @@
 # _config.yml
-title: Maximum Entertainment Developer API
-description: Comprehensive API documentation for our services.
-remote_theme: mmistakes/minimal-mistakes
+title: "Maximum Entertainment Developer API"
+description: "Comprehensive API documentation for our services."
+remote_theme: pmarsceill/just-the-docs
 markdown: kramdown
-# Plugins
+
+# Sidebar navigation
+just_the_docs:
+  show_toc: true  # Show the table of contents on each page
+  toc_levels: "1..3"  # Include headings (H1, H2, H3)
+  search_enabled: true  # Enable search functionality
+  search_tokenizer_separator: /[\s]+/  # Tokenizer for search
+
+# Markdown and highlighter settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins for Just the Docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-include-cache # Make sure this plugin is here
 
-minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# Exclude unnecessary files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
 
-
-sidebar:
-  enabled: false
-
-
+# Configuration to use README.md as the index page
 defaults:
   - scope:
       path: ""
-      type: "css"
+      type: "pages"
     values:
-      assets:
-        css:
-          - /assets/css/custom.css # Add your custom CSS path
+      layout: "default"
+      permalink: "/"
