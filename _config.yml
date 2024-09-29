@@ -9,7 +9,6 @@ just_the_docs:
   show_toc: true  # Show the table of contents on each page
   toc_levels: "1..3"  # Include headings (H1, H2, H3)
   search_enabled: true  # Enable search functionality
-  search_tokenizer_separator: /[\s]+/  # Tokenizer for search
 
 # Markdown and highlighter settings
 markdown: kramdown
